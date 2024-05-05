@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<h1>all tasks</h1>
+    {% for all_task in all_tasks %}
+    <div>
+        <h3>Titulo: {{ all_task.title }}</h3>
+        {% if all_task.done == False %}
+            <p>Tarea pendiente ⚠</p>
+        {% else %}
+        <p>Tarea realizada ✅</p>
+        {% endif %}
+        <p>Descripcion: {{ all_task.description }}</p>
+        <!-- este muestra la relacion y se pueden mostrar todos los camposname, id, etc. -->
+        <p>Proyecto: {{ all_task.project.name }}</p>
+        <button>Eliminar</button>
+        <button>✅ Listo</button>
+        <hr>
+    </div>
+    {% endfor %}
+{% endblock %}

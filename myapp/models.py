@@ -16,6 +16,7 @@ class Task(models.Model):
     # relacionando columnas chaci es automatico lo relaciona con el id, ForeignKey()tendra 2 parametros: 1ro con que se va a relacionar, 2do es opcional orita tendra eliminacion en cascada
     project = models.ForeignKey(Project, on_delete=models.CASCADE) 
     # metodo para mostrar las Task por el title
+    done = models.BooleanField(default=False)
     def __str__(self):
         # se mostrar el titulo de de la Task y concadenato a que nombre de proyecto pertenece
         return self.title + " - " + self.project.name

@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<h1>Projects</h1>
+<!-- ciclo for en el motor de plantillas  -->
+{% for project in projects_re %}
+    <p>{{ project.name }}</p>
+{% endfor %}
+{% endblock %}
