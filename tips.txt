@@ -1,0 +1,32 @@
+1----EJECUCION DE INICIO EN DJANGO-------
+-crear entorno virtual: virtualenv venv venv
+-ejecutarentorno virtual: source venv/Scripts/activate
+-inatlar django: pip install django
+-ver la version django instalada: django-admin --version
+2--------CREAR PROYECTO, EJECUTAR Y CREAR APLICACION------------
+-crear proyecto de django: django-admin startproject nombreproyecto .
+-ejecutar proyecto: python manage.py runserver
+-ejecytar proyecto en un puerto espesifico: python manage.py runserver 3000
+-comandos vacicos: python manage.py --help
+-creacion de aplicacion: python manage.py startapp nombreaplicacion
+3---------------MIGRACIONES--------------
+-crear migration o base de datos: python manage.py makemigrations
+-ejecutar migracion: python manage.py migrate
+-ejecutar migraciones de una aplicacion en espesifico: python manage.py magrte nombreapp
+-----------------------------------------
+4--------- interaccion con las tablas atraves del shell de django
+-activar shell de django: python manage.py shell
+-importacion de el modelo que creo las tablas: from myapp.models import Project, Task 
+-insertar valos en una tabla de acuerdo con el nombre de la clase con que fue creada, esto puede guardar en una variable que en este caso se llamara p: p = Project(name='aplicacion movil') 
+-ejecutar variable, dice que tienes un objeto que en este caso esta basado en la clase Project: p
+guardar cambios en la base de datos con la variable donde se almaceno el valor: p.save()
+-obctener regisrtode una tabla por medio de la clase con ques e creo, esto retorna una lista: Project.objects.all()
+-obtener 1 en espesifico de acuerdo con una columna y un valor: Project.objects.get(id=1)
+- obteniendo valores de la tabla Task por medio de una relacion, p = se almacenara, Project.objects.get(id=1) el proyecto con el id 1, despues de p.  el task_set es la otra clase TASK .all obten todo lo que se leacione : p.task_set.all()
+-agregando una tarea ay que esta conectada con una llave forane a de task: p.task_set.create()
+5----------acceso a el panel de administrador----------------------
+-creacion del super usuario: python manage.py createsuperuser
+---------------------------------------------------------------------
+* el archivo __init__.py  esta diciendo que esto es un modulo
+* el archivo setting.py   este para configurar el proyecto 
+el archivo urls.py   es donde se establecen las url que podran visitar los clientes
