@@ -50,5 +50,11 @@ def all_tasks(request):
     return render(request, "all_tasks.html", { 'all_tasks': all_tasks })
 # vista e crear tareas
 def create_task(request):
+    # imprime en la consola los datos obtenidos al mandar
+    if request.GET:
+        print(request.GET['title'])
+        print(request.GET['description'])
+        # para guardar los datos en la bbdd, como en este caso se guarda en una var lo obtenido, 
+        Task.objects.create(title=request.GET['title'], description = request.GET['description'], project_id=1)
     # sel le esta pasando a jinja la clase CreateNewTask, para poder mostrar el formulario
     return render(request, "create_task.html", { 'form': CreateNewTask() })
