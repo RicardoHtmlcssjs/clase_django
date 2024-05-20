@@ -12,7 +12,7 @@
 3---------------MIGRACIONES--------------
 -crear migration o base de datos: python manage.py makemigrations
 -ejecutar migracion: python manage.py migrate
--ejecutar migraciones de una aplicacion en espesifico: python manage.py magrte nombreapp
+-ejecutar migraciones de una aplicacion en espesifico: python manage.py migrate nombreapp
 -----------------------------------------
 4--------- interaccion con las tablas atraves del shell de django
 -activar shell de django: python manage.py shell

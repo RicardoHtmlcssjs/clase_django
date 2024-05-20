@@ -15,11 +15,11 @@ admin.site.site_title='Minec3'
 class TaskAdmin(admin.ModelAdmin):
     # date_hierarchy = 'created'
     # list_display: espesifica los campos a mostrar de bbdd, accepted no esta en bbdd es una columna creada dinamicamente, tiene que tener el mismo nombre que el metodo
-    list_display=('id', 'title', 'description', 'done', 'accepted')
+    list_display=('id', 'title', 'description', 'done', 'accepted','project')
     # search_fields: campos a buscar
     search_fields=('title', 'description')
     # fields: muestra los campos a editar en el order que se escriban
-    fields=('title', 'description', 'done')
+    fields=('title', 'description', 'done', 'project')
     # 
     ordering=('-title', '-description')
     def accepted(self, obj):
